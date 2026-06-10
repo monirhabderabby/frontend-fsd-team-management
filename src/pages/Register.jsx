@@ -110,7 +110,7 @@ const Register = () => {
     border: "1px solid rgba(255,255,255,0.15)",
   };
 
-  const handleFocus = (e) => (e.target.style.borderColor = "rgba(16,185,129,0.6)");
+  const handleFocus = (e) => (e.target.style.borderColor = "rgba(1,162,42,0.75)");
   const handleBlur = (e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)");
 
   return (
@@ -126,7 +126,7 @@ const Register = () => {
       {/* Dark overlay */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: "linear-gradient(135deg, rgba(10,26,46,0.72) 0%, rgba(12,20,37,0.80) 100%)" }}
+        style={{ background: "linear-gradient(135deg, rgba(7,22,11,0.76) 0%, rgba(1,82,22,0.84) 58%, rgba(255,195,0,0.18) 100%)" }}
       />
 
       {/* Particles */}
@@ -137,7 +137,7 @@ const Register = () => {
         <div
           className="rounded-2xl overflow-hidden p-8 md:p-12"
           style={{
-            background: "rgba(255, 255, 255, 0.08)",
+            background: "rgba(7, 22, 11, 0.78)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
             border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -149,8 +149,8 @@ const Register = () => {
             <div
               className="h-16 w-16 rounded-xl flex items-center justify-center shadow-sm"
               style={{
-                background: "rgba(16,185,129,0.18)",
-                border: "1px solid rgba(16,185,129,0.35)",
+                background: "rgba(255,195,0,0.16)",
+                border: "1px solid rgba(255,195,0,0.38)",
               }}
             >
               <img src={logo} alt="Team Management Portal" className="h-9 w-9 object-contain" />
@@ -235,8 +235,8 @@ const Register = () => {
                   onBlur={handleBlur}
                   required
                 >
-                  <option value="" style={{ background: "#0c1425" }}>Select Service Line</option>
-                  {serviceLines.map((line) => (<option key={line._id} value={line._id} style={{ background: "#0c1425" }}>{line.name}</option>))}
+                  <option value="" style={{ background: "#07160B" }}>Select Service Line</option>
+                  {serviceLines.map((line) => (<option key={line._id} value={line._id} style={{ background: "#07160B" }}>{line.name}</option>))}
                 </select>
                 <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
                   <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -261,8 +261,8 @@ const Register = () => {
                   onBlur={handleBlur}
                   required
                 >
-                  <option value="" style={{ background: "#0c1425" }}>Select Team</option>
-                  {teams.map((team) => (<option key={team._id} value={team._id} style={{ background: "#0c1425" }}>{team.name}</option>))}
+                  <option value="" style={{ background: "#07160B" }}>Select Team</option>
+                  {teams.map((team) => (<option key={team._id} value={team._id} style={{ background: "#07160B" }}>{team.name}</option>))}
                 </select>
                 <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
                   <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -326,7 +326,7 @@ const Register = () => {
             <button
               type="submit"
               className="sm:col-span-2 mt-2 rounded-lg bg-emerald-600 py-3.5 text-sm font-bold text-white transition-all hover:bg-emerald-500 active:scale-[0.99] disabled:opacity-50 flex items-center justify-center gap-2"
-              style={{ boxShadow: "0 4px 20px rgba(16,185,129,0.35)" }}
+              style={{ boxShadow: "0 4px 20px rgba(1,162,42,0.35)" }}
               disabled={loading}
             >
               {loading ? (

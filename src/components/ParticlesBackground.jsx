@@ -19,9 +19,9 @@ const PARTICLES_OPTIONS = {
     },
   },
   particles: {
-    color: { value: ["#10b981", "#34d399", "#6ee7b7", "#a7f3d0"] },
+    color: { value: ["#01A22A", "#2FBD53", "#FFC300", "#FFF0AD"] },
     links: {
-      color: "#10b981",
+      color: "#01A22A",
       distance: 130,
       enable: true,
       opacity: 0.22,

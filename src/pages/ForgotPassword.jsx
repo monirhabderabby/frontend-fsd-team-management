@@ -43,7 +43,7 @@ const ForgotPassword = () => {
       {/* Dark overlay */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: "linear-gradient(135deg, rgba(10,26,46,0.72) 0%, rgba(12,20,37,0.80) 100%)" }}
+        style={{ background: "linear-gradient(135deg, rgba(7,22,11,0.76) 0%, rgba(1,82,22,0.84) 58%, rgba(255,195,0,0.18) 100%)" }}
       />
 
       {/* Particles */}
@@ -54,7 +54,7 @@ const ForgotPassword = () => {
         <div
           className="rounded-2xl overflow-hidden p-8 md:p-10"
           style={{
-            background: "rgba(255, 255, 255, 0.08)",
+            background: "rgba(7, 22, 11, 0.78)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
             border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -66,8 +66,8 @@ const ForgotPassword = () => {
             <div
               className="inline-flex items-center justify-center h-16 w-16 rounded-xl mb-6"
               style={{
-                background: "rgba(16,185,129,0.18)",
-                border: "1px solid rgba(16,185,129,0.35)",
+                background: "rgba(255,195,0,0.16)",
+                border: "1px solid rgba(255,195,0,0.38)",
               }}
             >
               <img src={logo} alt="Team Management Portal" className="h-9 w-9 object-contain" />
@@ -93,7 +93,7 @@ const ForgotPassword = () => {
                     background: "rgba(255,255,255,0.07)",
                     border: "1px solid rgba(255,255,255,0.15)",
                   }}
-                  onFocus={e => (e.target.style.borderColor = "rgba(16,185,129,0.6)")}
+                  onFocus={e => (e.target.style.borderColor = "rgba(1,162,42,0.75)")}
                   onBlur={e => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
                   required
                 />
@@ -110,7 +110,7 @@ const ForgotPassword = () => {
             <button
               type="submit"
               className="w-full rounded-lg bg-emerald-600 py-3 text-sm font-bold text-white transition-all hover:bg-emerald-500 active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2"
-              style={{ boxShadow: "0 4px 20px rgba(16,185,129,0.35)" }}
+              style={{ boxShadow: "0 4px 20px rgba(1,162,42,0.35)" }}
               disabled={loading}
             >
               {loading ? (
