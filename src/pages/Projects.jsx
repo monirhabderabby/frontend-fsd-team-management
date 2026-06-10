@@ -1573,7 +1573,7 @@ const Projects = () => {
                   </div>
                   <div className="h-4 w-full rounded-full bg-slate-100 overflow-hidden p-1 border border-slate-200/50">
                     <div
-                      className={`h-full rounded-full transition-all duration-1000 ${targetStatus === "Achieved" ? "bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)]" : "bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.3)]"}`}
+                      className={`h-full rounded-full transition-all duration-1000 ${targetStatus === "Achieved" ? "bg-emerald-500 shadow-[0_0_15px_rgba(1,162,42,0.3)]" : "bg-indigo-500 shadow-[0_0_15px_rgba(255,195,0,0.28)]"}`}
                       style={{
                         width: `${Math.min(100, (deliveryMetrics.deliveredAmount / targetAmount) * 100)}%`,
                       }}
@@ -3116,7 +3116,7 @@ const Projects = () => {
               <ul className="space-y-4 py-2">
                 {activeActivity.activity.map((item, idx) => (
                   <li key={idx} className="flex gap-3 text-sm text-slate-600">
-                    <div className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                    <div className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(1,162,42,0.5)]" />
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
