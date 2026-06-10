@@ -1,24 +1,31 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layouts/RootLayout.jsx";
-import Dashboard from "../pages/Dashboard.jsx";
-import Projects from "../pages/Projects.jsx";
-import Delivery from "../pages/Delivery.jsx";
-import Ranking from "../pages/Ranking.jsx";
-import Attendance from "../pages/Attendance.jsx";
-import Reports from "../pages/Reports.jsx";
-import Settings from "../pages/Settings.jsx";
-import ServiceLines from "../pages/ServiceLines.jsx";
-import Teams from "../pages/Teams.jsx";
-import Employees from "../pages/Employees.jsx";
-import Login from "../pages/Login.jsx";
-import Register from "../pages/Register.jsx";
-import ForgotPassword from "../pages/ForgotPassword.jsx";
-import ResetPassword from "../pages/ResetPassword.jsx";
-import VerifyEmail from "../pages/VerifyEmail.jsx";
-import NotFound from "../pages/NotFound.jsx";
 import ProtectedRoute from "../components/ProtectedRoute.jsx";
-import Announcement from "@/pages/Announcement.jsx";
-import LearnTogether from "../pages/LearnTogether.jsx";
+import GlobalLoader from "../components/GlobalLoader.jsx";
+
+const Dashboard = lazy(() => import("../pages/Dashboard.jsx"));
+const Projects = lazy(() => import("../pages/Projects.jsx"));
+const Delivery = lazy(() => import("../pages/Delivery.jsx"));
+const Ranking = lazy(() => import("../pages/Ranking.jsx"));
+const Attendance = lazy(() => import("../pages/Attendance.jsx"));
+const Reports = lazy(() => import("../pages/Reports.jsx"));
+const Settings = lazy(() => import("../pages/Settings.jsx"));
+const ServiceLines = lazy(() => import("../pages/ServiceLines.jsx"));
+const Teams = lazy(() => import("../pages/Teams.jsx"));
+const Employees = lazy(() => import("../pages/Employees.jsx"));
+const Login = lazy(() => import("../pages/Login.jsx"));
+const Register = lazy(() => import("../pages/Register.jsx"));
+const ForgotPassword = lazy(() => import("../pages/ForgotPassword.jsx"));
+const ResetPassword = lazy(() => import("../pages/ResetPassword.jsx"));
+const VerifyEmail = lazy(() => import("../pages/VerifyEmail.jsx"));
+const NotFound = lazy(() => import("../pages/NotFound.jsx"));
+const Announcement = lazy(() => import("@/pages/Announcement.jsx"));
+const LearnTogether = lazy(() => import("../pages/LearnTogether.jsx"));
+
+const withPageLoader = (element) => (
+  <Suspense fallback={<GlobalLoader />}>{element}</Suspense>
+);
 
 const router = createBrowserRouter([
   {
@@ -29,12 +36,12 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      { index: true, element: <Dashboard /> },
+      { index: true, element: withPageLoader(<Dashboard />) },
       {
         path: "service-lines",
         element: (
           <ProtectedRoute allowedRoles={["SUPER_ADMIN"]}>
-            <ServiceLines />
+            {withPageLoader(<ServiceLines />)}
           </ProtectedRoute>
         ),
       },
@@ -42,7 +49,7 @@ const router = createBrowserRouter([
         path: "teams",
         element: (
           <ProtectedRoute allowedRoles={["SUPER_ADMIN", "PROJECT_MANAGER"]}>
-            <Teams />
+            {withPageLoader(<Teams />)}
           </ProtectedRoute>
         ),
       },
@@ -52,18 +59,18 @@ const router = createBrowserRouter([
           <ProtectedRoute
             allowedRoles={["SUPER_ADMIN", "PROJECT_MANAGER", "TEAM_LEADER"]}
           >
-            <Employees />
+            {withPageLoader(<Employees />)}
           </ProtectedRoute>
         ),
       },
-      { path: "projects", element: <Projects /> },
+      { path: "projects", element: withPageLoader(<Projects />) },
       {
         path: "delivery",
         element: (
           <ProtectedRoute
             allowedRoles={["SUPER_ADMIN", "PROJECT_MANAGER", "TEAM_LEADER"]}
           >
-            <Delivery />
+            {withPageLoader(<Delivery />)}
           </ProtectedRoute>
         ),
       },
@@ -71,23 +78,23 @@ const router = createBrowserRouter([
         path: "announcement",
         element: (
           <ProtectedRoute>
-            <Announcement />
+            {withPageLoader(<Announcement />)}
           </ProtectedRoute>
         ),
       },
-      { path: "ranking", element: <Ranking /> },
-      { path: "attendance", element: <Attendance /> },
-      { path: "reports", element: <Reports /> },
-      { path: "settings", element: <Settings /> },
-      { path: "learn-together", element: <LearnTogether /> },
+      { path: "ranking", element: withPageLoader(<Ranking />) },
+      { path: "attendance", element: withPageLoader(<Attendance />) },
+      { path: "reports", element: withPageLoader(<Reports />) },
+      { path: "settings", element: withPageLoader(<Settings />) },
+      { path: "learn-together", element: withPageLoader(<LearnTogether />) },
     ],
   },
-  { path: "/login", element: <Login /> },
-  { path: "/register", element: <Register /> },
-  { path: "/forgot-password", element: <ForgotPassword /> },
-  { path: "/reset-password", element: <ResetPassword /> },
-  { path: "/verify-email", element: <VerifyEmail /> },
-  { path: "*", element: <NotFound /> },
+  { path: "/login", element: withPageLoader(<Login />) },
+  { path: "/register", element: withPageLoader(<Register />) },
+  { path: "/forgot-password", element: withPageLoader(<ForgotPassword />) },
+  { path: "/reset-password", element: withPageLoader(<ResetPassword />) },
+  { path: "/verify-email", element: withPageLoader(<VerifyEmail />) },
+  { path: "*", element: withPageLoader(<NotFound />) },
 ]);
 
 export default router;

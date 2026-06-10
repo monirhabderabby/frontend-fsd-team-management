@@ -167,7 +167,7 @@ const TopBar = ({ onToggleSidebar }) => {
                 <button
                     type="button"
                     onClick={onToggleSidebar}
-                    className="h-9 w-9 flex items-center justify-center rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 active:scale-95 transition-all cursor-pointer"
+                    className="h-9 w-9 flex items-center justify-center rounded-xl border border-brand-green/15 bg-white hover:bg-brand-green-soft active:scale-95 transition-all cursor-pointer"
                     aria-label="Toggle sidebar"
                 >
                     <Menu size={18} className="text-slate-600" />
@@ -182,7 +182,7 @@ const TopBar = ({ onToggleSidebar }) => {
                     href="https://portal.scaleupdevagency.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hidden sm:flex items-center gap-4 px-4 py-2 rounded-xl bg-gradient-to-r from-[#00B22D] to-[#FFC300] text-white text-xs font-bold tracking-wide border-[1px] border-white-500/50  hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+                    className="hidden sm:flex items-center gap-4 px-4 py-2 rounded-xl bg-gradient-to-r from-brand-green to-brand-yellow text-white text-xs font-bold tracking-wide border border-brand-yellow/30 shadow-sm shadow-brand-green/20 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
                 >
                     <Rocket size={14} />
                     ScaleUp Portal
@@ -193,7 +193,7 @@ const TopBar = ({ onToggleSidebar }) => {
                 <div className="relative" ref={dropdownRef}>
                     <button
                         onClick={() => setShowNotifications(!showNotifications)}
-                        className={`h-9 w-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer ${showNotifications ? 'bg-indigo-50 border-indigo-200 text-indigo-600' : 'border-slate-200/80 bg-white hover:bg-slate-50 text-slate-500'}`}
+                        className={`h-9 w-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer ${showNotifications ? 'bg-brand-yellow-soft border-brand-yellow/40 text-brand-green-dark' : 'border-brand-green/15 bg-white hover:bg-brand-green-soft text-slate-500'}`}
                     >
                         <Bell size={17} />
                         {unreadCount > 0 && (
@@ -209,7 +209,7 @@ const TopBar = ({ onToggleSidebar }) => {
                             <div className="bg-slate-50 border-b border-slate-100 p-3 px-4 flex items-center justify-between">
                                 <h3 className="text-sm font-bold text-slate-800">Notifications</h3>
                                 {unreadCount > 0 && (
-                                    <button onClick={markAllAsRead} className="text-[10px] font-bold text-indigo-600 hover:text-indigo-700 cursor-pointer">
+                                    <button onClick={markAllAsRead} className="text-[10px] font-bold text-brand-green hover:text-brand-green-dark cursor-pointer">
                                         Mark all read
                                     </button>
                                 )}
@@ -229,20 +229,20 @@ const TopBar = ({ onToggleSidebar }) => {
                                         return (
                                             <div
                                                 key={notification.id}
-                                                className={`w-full relative p-4 border-b border-slate-100 hover:bg-slate-50 transition-colors flex gap-3 group ${!isRead ? 'bg-indigo-50/50' : ''}`}
+                                                className={`w-full relative p-4 border-b border-slate-100 hover:bg-slate-50 transition-colors flex gap-3 group ${!isRead ? 'bg-brand-green-soft/70' : ''}`}
                                             >
                                                 <button
                                                     onClick={() => handleNotificationClick(notification)}
                                                     className="absolute inset-0 w-full h-full cursor-pointer z-0"
                                                     aria-label="View announcement"
                                                 />
-                                                <div className="relative h-8 w-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 z-10 pointer-events-none">
+                                                <div className="relative h-8 w-8 rounded-full bg-brand-yellow-soft text-brand-green flex items-center justify-center shrink-0 z-10 pointer-events-none">
                                                     <Megaphone size={14} />
                                                     {!isRead && <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-rose-500 rounded-full border border-white" />}
                                                 </div>
                                                 <div className="flex-1 min-w-0 z-10 pointer-events-none">
                                                     <div className="flex items-center gap-2 mb-0.5">
-                                                        <p className={`text-xs truncate transition-colors ${!isRead ? 'font-bold text-indigo-900' : 'font-semibold text-slate-800 group-hover:text-indigo-600'}`}>
+                                                        <p className={`text-xs truncate transition-colors ${!isRead ? 'font-bold text-brand-green-dark' : 'font-semibold text-slate-800 group-hover:text-brand-green'}`}>
                                                             {notification.title}
                                                         </p>
                                                         {isUpdated && (
@@ -271,7 +271,7 @@ const TopBar = ({ onToggleSidebar }) => {
                                 <Link
                                     to="/announcement"
                                     onClick={() => setShowNotifications(false)}
-                                    className="block text-center p-2.5 bg-slate-50 text-[11px] font-bold text-indigo-600 hover:bg-slate-100 transition-colors"
+                                    className="block text-center p-2.5 bg-slate-50 text-[11px] font-bold text-brand-green hover:bg-brand-green-soft transition-colors"
                                 >
                                     View all announcements
                                 </Link>
@@ -312,7 +312,7 @@ const TopBar = ({ onToggleSidebar }) => {
                 <div className="fixed inset-0 z-[9999] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
                     <div className="bg-white w-full max-w-3xl rounded-[32px] overflow-hidden shadow-2xl animate-scale-in flex flex-col max-h-[90vh]">
                         {/* Banner */}
-                        <div className="bg-linear-to-r from-slate-900 via-indigo-900 to-indigo-800 p-8 text-white relative shrink-0">
+                        <div className="bg-linear-to-r from-[#07160B] via-brand-green-dark to-brand-green p-8 text-white relative shrink-0">
                             <button
                                 onClick={() => setViewModal(false)}
                                 className="absolute top-6 right-6 w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
@@ -321,7 +321,7 @@ const TopBar = ({ onToggleSidebar }) => {
                             </button>
 
                             <div className="flex items-center gap-5">
-                                <div className="w-20 h-20 rounded-3xl bg-indigo-500/40 border-2 border-white/20 flex items-center justify-center text-white text-2xl font-bold overflow-hidden shadow-xl backdrop-blur-md">
+                                <div className="w-20 h-20 rounded-3xl bg-brand-yellow/25 border-2 border-white/20 flex items-center justify-center text-white text-2xl font-bold overflow-hidden shadow-xl backdrop-blur-md">
                                     {selectedAnnouncement.author.image ? (
                                         <img src={selectedAnnouncement.author.image} alt={selectedAnnouncement.author.name} className="w-full h-full object-cover" />
                                     ) : (
@@ -337,7 +337,7 @@ const TopBar = ({ onToggleSidebar }) => {
                                         <span className="text-[11px] font-bold tracking-wider bg-white/10 px-2.5 py-1 rounded-lg uppercase">
                                             {selectedAnnouncement.author.role}
                                         </span>
-                                        <span className="flex items-center gap-1.5 text-xs text-indigo-200">
+                                        <span className="flex items-center gap-1.5 text-xs text-brand-yellow-soft">
                                             <CalendarDays size={14} />
                                             {formatDateTime(selectedAnnouncement.date)}
                                         </span>

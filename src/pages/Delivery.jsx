@@ -414,7 +414,7 @@ const Delivery = () => {
                     <TableCell className="py-4">
                       <div className="flex items-center gap-3">
                         {teamId !== "all" && String(r.id) === teamId && (
-                          <div className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                          <div className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(1,162,42,0.5)]" />
                         )}
                         <span className="text-base font-black text-slate-900">{r.name}</span>
                       </div>

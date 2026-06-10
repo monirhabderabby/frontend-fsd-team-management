@@ -82,9 +82,9 @@ const Sidebar = ({ isCollapsed }) => {
         }`}
     >
       {/* ── Brand Logo ── */}
-      <div className={`p-5 ${isCollapsed ? "px-3" : "px-5"} border-b border-white/6 relative z-20`}>
+      <div className={`p-5 ${isCollapsed ? "px-3" : "px-5"} border-b border-white/8 relative z-20`}>
         <div className={`flex items-center ${isCollapsed ? "justify-center" : "gap-3"}`}>
-          <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-white border border-brand-yellow/40 shadow-lg shadow-brand-yellow/20 flex items-center justify-center shrink-0">
             <img src={logo} alt="Team Management Portal" className="h-7 w-7 object-contain rounded-lg" />
           </div>
           <div className={isCollapsed ? "hidden" : "block"}>
@@ -110,22 +110,22 @@ const Sidebar = ({ isCollapsed }) => {
                 "group relative flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-300",
                 isCollapsed ? "justify-center" : "",
                 isActive
-                  ? "bg-emerald-500/15 text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
-                  : "text-slate-400 hover:text-white hover:bg-white/10 hover:shadow-lg",
+                  ? "bg-brand-green/18 text-brand-yellow shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+                  : "text-slate-300/75 hover:text-white hover:bg-white/10 hover:shadow-lg",
               ].join(" ")
             }
           >
             {({ isActive }) => (
               <>
                 {isActive && (
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-emerald-400 rounded-r-full shadow-[0_0_12px_rgba(52,211,153,0.6)]" />
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-brand-yellow rounded-r-full shadow-[0_0_12px_rgba(255,195,0,0.55)]" />
                 )}
-                <item.icon size={18} className={`shrink-0 transition-all duration-300 ${isActive ? "text-emerald-400 scale-110" : "text-slate-500 group-hover:text-slate-300 group-hover:scale-110"}`} />
+                <item.icon size={18} className={`shrink-0 transition-all duration-300 ${isActive ? "text-brand-yellow scale-110" : "text-slate-500 group-hover:text-slate-200 group-hover:scale-110"}`} />
                 <span className={`${isCollapsed ? "hidden" : "text-[14.5px] font-semibold tracking-wide"}`}>
                   {item.label}
                 </span>
                 {!isCollapsed && isActive && (
-                  <ChevronRight size={14} className="ml-auto text-emerald-400/80 animate-pulse" />
+                  <ChevronRight size={14} className="ml-auto text-brand-yellow/90 animate-pulse" />
                 )}
               </>
             )}
@@ -138,14 +138,14 @@ const Sidebar = ({ isCollapsed }) => {
         <div className={`bg-white/5 backdrop-blur-md rounded-2xl p-3 border border-white/10 shadow-xl ${isCollapsed ? "px-1.5" : ""}`}>
           <div className={`flex items-center ${isCollapsed ? "justify-center" : "gap-3"}`}>
             <div className="relative shrink-0">
-              <div className="w-10 h-10  text-white rounded-xl flex items-center justify-center font-bold text-sm overflow-hidden shadow-lg shadow-emerald-500/20">
+              <div className="w-10 h-10 bg-brand-green text-white rounded-xl flex items-center justify-center font-bold text-sm overflow-hidden shadow-lg shadow-brand-green/25">
                 {user?.profileImage ? (
                   <img src={user.profileImage} alt={displayName} className="w-full h-full object-cover" />
                 ) : (
                   initials || "U"
                 )}
               </div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-[#0c1425] rounded-full shadow-sm" />
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-brand-yellow border-2 border-[#07160B] rounded-full shadow-sm" />
             </div>
             <div className={isCollapsed ? "hidden" : "block min-w-0"}>
               <p className="font-semibold text-white text-[13.5px] truncate leading-tight">{displayName}</p>

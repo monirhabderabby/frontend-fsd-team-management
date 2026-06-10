@@ -120,12 +120,12 @@ const PulseCurve = ({ projects, title, icon: Icon }) => {
           <AreaChart data={data} margin={{ top: 10, right: 5, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="colorDelivered" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#10b981" stopOpacity={0.4} />
-                <stop offset="95%" stopColor="#10b981" stopOpacity={0.02} />
+                <stop offset="5%" stopColor="#01A22A" stopOpacity={0.4} />
+                <stop offset="95%" stopColor="#01A22A" stopOpacity={0.02} />
               </linearGradient>
               <linearGradient id="colorWip" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#6366f1" stopOpacity={0.4} />
-                <stop offset="95%" stopColor="#6366f1" stopOpacity={0.02} />
+                <stop offset="5%" stopColor="#FFC300" stopOpacity={0.42} />
+                <stop offset="95%" stopColor="#FFC300" stopOpacity={0.04} />
               </linearGradient>
               <linearGradient id="colorCancelled" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#f43f5e" stopOpacity={0.3} />
@@ -159,7 +159,7 @@ const PulseCurve = ({ projects, title, icon: Icon }) => {
             <Area
               type="monotone"
               dataKey="wip"
-              stroke="#6366f1"
+              stroke="#FFC300"
               strokeWidth={3}
               fillOpacity={1}
               fill="url(#colorWip)"
@@ -168,7 +168,7 @@ const PulseCurve = ({ projects, title, icon: Icon }) => {
             <Area
               type="monotone"
               dataKey="delivered"
-              stroke="#10b981"
+              stroke="#01A22A"
               strokeWidth={3}
               fillOpacity={1}
               fill="url(#colorDelivered)"
@@ -627,7 +627,7 @@ const Dashboard = () => {
             />
 
             {/* Motivational glass panel */}
-            <div className="relative overflow-hidden bg-linear-to-br from-[#13113c] to-[#251e62] p-8 rounded-3xl text-white shadow-xl shadow-indigo-900/10 group">
+            <div className="relative overflow-hidden bg-linear-to-br from-[#07160B] via-[#015216] to-[#01A22A] p-8 rounded-3xl text-white shadow-xl shadow-emerald-900/10 group">
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none" />
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center gap-2">
@@ -933,7 +933,7 @@ const Dashboard = () => {
             />
 
             {/* Premium System Stats Card */}
-            <div className="bg-slate-900 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden group">
+            <div className="bg-[#07160B] p-8 rounded-3xl text-white shadow-xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl pointer-events-none" />
               <div className="relative z-10 space-y-4">
                 <div className="flex items-center gap-3">
